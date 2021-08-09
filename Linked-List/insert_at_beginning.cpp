@@ -20,13 +20,15 @@ Node *InsertIntoListAtBeginning(Node *head, int data)
 
 void PrintList(Node *head)
 {
-  printf("List is: [");
+  printf("List is: [\n");
   while (head != NULL)
   {
-    printf(" %d", head->data);
+    printf("  ( %d ", head->data);
+    printf("[ Addr: %p ]", head);
+    printf(" => %p )\n", head->next);
     head = head->next;
   }
-  printf(" ]\n");
+  printf("]\n");
 }
 
 int main()
@@ -40,7 +42,7 @@ int main()
     printf("Enter the number...\n");
     scanf("%d", &enteredNumber);
     head = InsertIntoListAtBeginning(head, enteredNumber);
-    PrintList(head);
   }
+  PrintList(head);
   return 0;
 }
